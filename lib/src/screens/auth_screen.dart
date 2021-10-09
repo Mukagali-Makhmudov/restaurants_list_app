@@ -67,7 +67,7 @@ class AuthScreen extends StatelessWidget {
               color: Color(0xFF4631D2),
               child: Text('Зарегистрироваться'), 
               onPressed: () {
-                Navigator.pushNamed(context, RegisterRoute);
+                Navigator.pushNamed(context, '/auth/register');
               },
             ),
           ),
