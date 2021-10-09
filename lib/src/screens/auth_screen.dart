@@ -1,4 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_application_1/src/common/constants/color_constants.dart';
+import 'package:flutter_application_1/src/common/constants/padding_constants.dart';
+import 'package:flutter_application_1/src/common/widgets/custom_button.dart';
+import 'package:flutter_application_1/src/common/widgets/custom_text_field.dart';
+import 'package:flutter_application_1/src/common/widgets/text_field_divider.dart';
 import 'package:flutter_application_1/src/router/routing_const.dart';
 import 'package:flutter_application_1/src/screens/register_screen.dart';
 
@@ -8,9 +13,9 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: Color(0xFFF3F4F6),
+      backgroundColor: AppColors.scaffoldBackground,
       navigationBar: CupertinoNavigationBar(
-        backgroundColor: CupertinoColors.white,
+        backgroundColor: AppColors.white,
         border: Border(),
         middle: Text('Авторизация'),
       ),
@@ -19,51 +24,31 @@ class AuthScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          CupertinoTextField(
-            decoration: BoxDecoration(
-              color: CupertinoColors.white,
-            ),
+          CustomTextField(
             placeholder: 'Логин или почта',
-            padding: const EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
           ),
 
-          Container(
-            height: 1,
-            color: Color(0xFFE0E6ED),
-            margin: const EdgeInsets.symmetric(horizontal: 16),
-          ),
+          TextFieldDivider(),
 
-          CupertinoTextField(
-            decoration: BoxDecoration(
-              color: CupertinoColors.white,
-            ),
+          CustomTextField(
             placeholder: 'Пароль',
-            padding: const EdgeInsets.symmetric(vertical: 19, horizontal: 16),
-            style: TextStyle(
-              fontWeight: FontWeight.bold),
           ),
 
           SizedBox(height: 32),
 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: CupertinoButton(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              color: Color(0xFF4631D2),
-              child: Text('Войти'),
-              onPressed: () {},
+            padding: AppPaddings.horizontal,
+            child: CustomButton(
+              text: 'Войти',
             ),
           ),
 
           SizedBox(height: 19),
 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: AppPaddings.horizontal,
             child: CupertinoButton(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: AppPaddings.vertical,
               color: Color(0xFF4631D2),
               child: Text('Зарегистрироваться'), 
               onPressed: () {
