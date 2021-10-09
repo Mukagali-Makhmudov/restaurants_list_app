@@ -6,25 +6,46 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      backgroundColor: Color(0xFFF3F4F6),
       navigationBar: CupertinoNavigationBar(
+        backgroundColor: CupertinoColors.white,
+        border: Border(),
         middle: Text('Авторизация'),
       ),
+
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           CupertinoTextField(
+            decoration: BoxDecoration(
+              color: CupertinoColors.white,
+            ),
             placeholder: 'Логин или почта',
+            padding: const EdgeInsets.symmetric(vertical: 19, horizontal: 16),
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),
           ),
+
+          Container(
+            height: 1,
+            color: Color(0xFFE0E6ED),
+            margin: const EdgeInsets.symmetric(horizontal: 16),
+          ),
+
           CupertinoTextField(
+            decoration: BoxDecoration(
+              color: CupertinoColors.white,
+            ),
             placeholder: 'Пароль',
+            padding: const EdgeInsets.symmetric(vertical: 19, horizontal: 16),
             style: TextStyle(
               fontWeight: FontWeight.bold),
           ),
+
           SizedBox(height: 32),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: CupertinoButton(
@@ -34,7 +55,9 @@ class AuthScreen extends StatelessWidget {
               onPressed: () {},
             ),
           ),
+
           SizedBox(height: 19),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: CupertinoButton(
