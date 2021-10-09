@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_application_1/src/router/routing_const.dart';
+import 'package:flutter_application_1/src/screens/register_screen.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -64,7 +66,9 @@ class AuthScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 20),
               color: Color(0xFF4631D2),
               child: Text('Зарегистрироваться'), 
-              onPressed: () {}
+              onPressed: () {
+                Navigator.pushNamed(context, RegisterRoute);
+              },
             ),
           ),
         ],
