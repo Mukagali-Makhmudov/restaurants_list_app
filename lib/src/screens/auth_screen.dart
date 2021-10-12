@@ -38,10 +38,15 @@ class AuthScreen extends StatelessWidget {
 
           Padding(
             padding: AppPaddings.horizontal,
-            child: CustomButton(
-              text: 'Войти',
+            child: CupertinoButton(
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              color: Color(0xFF4631D2),
+              child: Text('Войти'), 
+              onPressed: () {
+                Navigator.pushNamed(context, RestMainRoute);
+              }
             ),
-          ),
+            ),
 
           SizedBox(height: 19),
 
