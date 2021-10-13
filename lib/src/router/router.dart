@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/src/router/routing_const.dart';
 import 'package:flutter_application_1/src/screens/auth_screen.dart';
-import 'package:flutter_application_1/src/screens/favourites_screen.dart';
+import 'package:flutter_application_1/src/screens/favorites_screen.dart';
 import 'package:flutter_application_1/src/screens/home_screen.dart';
 import 'package:flutter_application_1/src/screens/main_screen.dart';
 import 'package:flutter_application_1/src/screens/map_screen.dart';
@@ -27,7 +27,7 @@ class AppRouter{
         );
       case FavouritesRoute:
         return CupertinoPageRoute(
-          builder: (context) => FavouritesScreen(),
+          builder: (context) => FavoritesScreen(),
         );
       case MapRoute:
         return CupertinoPageRoute(
