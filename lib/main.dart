@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/src/common/constants/color_constants.dart';
 import 'package:flutter_application_1/src/router/router.dart';
 import 'package:flutter_application_1/src/screens/auth_screen.dart';
-import 'package:flutter_application_1/src/screens/register_screen.dart';
 
 void main() {
   runApp(const MyApp());

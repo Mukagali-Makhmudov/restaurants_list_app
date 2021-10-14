@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/src/common/constants/color_constants.dart';
 import 'package:flutter_application_1/src/common/constants/padding_constants.dart';
-import 'package:flutter_application_1/src/common/widgets/custom_button.dart';
 import 'package:flutter_application_1/src/common/widgets/custom_text_field.dart';
 import 'package:flutter_application_1/src/common/widgets/text_field_divider.dart';
 import 'package:flutter_application_1/src/router/routing_const.dart';
-import 'package:flutter_application_1/src/screens/register_screen.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);

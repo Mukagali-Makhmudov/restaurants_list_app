@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/common/constants/color_constants.dart';
-import 'package:flutter_application_1/src/common/widgets/custom_button.dart';
-import 'package:flutter_application_1/src/common/widgets/custom_text_field.dart';
-import 'package:flutter_application_1/src/domain/restaurant.dart';
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -21,7 +17,7 @@ class HomeScreen extends StatelessWidget {
                 child: CupertinoSearchTextField(
                   placeholder: 'Поиск',
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
+                    border: Border.all(color: CupertinoColors.systemGrey),
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                     color: AppColors.scaffoldBackground,
                   ),
