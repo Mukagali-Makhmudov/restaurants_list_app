@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/src/common/constants/color_constants.dart';
 import 'package:flutter_application_1/src/common/constants/padding_constants.dart';
+import 'package:flutter_application_1/src/common/models/tokens_model.dart';
 import 'package:flutter_application_1/src/common/widgets/custom_text_field.dart';
 import 'package:flutter_application_1/src/common/widgets/text_field_divider.dart';
 import 'package:flutter_application_1/src/router/routing_const.dart';
@@ -16,6 +17,7 @@ class AuthScreen extends StatefulWidget {
 
 class _AuthScreenState extends State<AuthScreen> {
   Dio dio = Dio();
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -65,8 +67,10 @@ class _AuthScreenState extends State<AuthScreen> {
                       'password': passwordController.text,
                     },
                   );
-                  tokensBox.put('access', responce.data['tokens']['accessTokens']);
-                  tokensBox.put('refresh', responce.data['tokens']['refreshTokens']);
+                  TokensModel tokensModel = TokensModel.fromJson(
+                    responce.data['tokens']);
+                  tokensBox.put('access', tokensModel.access);
+                  tokensBox.put('refresh', tokensModel.refresh);
                   print(tokensBox.get('access'));
                   print(tokensBox.get('refresh'));
                   Navigator.pushReplacementNamed(context, RestMainRoute);
