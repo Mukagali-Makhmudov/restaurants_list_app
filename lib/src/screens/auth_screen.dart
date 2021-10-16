@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/src/common/constants/color_constants.dart';
 import 'package:flutter_application_1/src/common/constants/padding_constants.dart';
 import 'package:flutter_application_1/src/common/models/tokens_model.dart';
+import 'package:flutter_application_1/src/common/models/user_model.dart';
 import 'package:flutter_application_1/src/common/widgets/custom_text_field.dart';
 import 'package:flutter_application_1/src/common/widgets/text_field_divider.dart';
 import 'package:flutter_application_1/src/router/routing_const.dart';
@@ -16,7 +17,6 @@ class AuthScreen extends StatefulWidget {
 }
 
 class _AuthScreenState extends State<AuthScreen> {
-  Dio dio = Dio();
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -59,6 +59,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 print(emailController.text);
                 Dio dio = Dio();
                 Box tokensBox = Hive.box('tokens');
+                Box userBox = Hive.box('user');
                 try {
                   Response responce = await dio.post(
                     'http://api.codeunion.kz/api/v1/auth/login',
@@ -69,10 +70,17 @@ class _AuthScreenState extends State<AuthScreen> {
                   );
                   TokensModel tokensModel = TokensModel.fromJson(
                     responce.data['tokens']);
+                  UserModel userModel = UserModel.fromJson(
+                    responce.data['user'],
+                  );
                   tokensBox.put('access', tokensModel.access);
                   tokensBox.put('refresh', tokensModel.refresh);
+                  userBox.put('email', userModel.email);
+                  userBox.put('nickname', userModel.nickname);
                   print(tokensBox.get('access'));
                   print(tokensBox.get('refresh'));
+                  print(userBox.get('email'));
+                  print(userBox.get('nickname'));
                   Navigator.pushReplacementNamed(context, RestMainRoute);
                 } on DioError catch (e) {
                   showCupertinoModalPopup(
