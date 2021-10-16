@@ -42,6 +42,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   onPressed: (){
                     tokensBox.delete('access');
                     tokensBox.delete('refresh');
+                    userBox.delete('email');
+                    userBox.delete('nickname');
                     Navigator.of(context, rootNavigator:true).pushReplacementNamed(AuthRoute);
                   },
                   child: Text(
