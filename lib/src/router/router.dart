@@ -9,6 +9,7 @@ import 'package:flutter_application_1/src/screens/main_screen.dart';
 import 'package:flutter_application_1/src/screens/map_screen.dart';
 import 'package:flutter_application_1/src/screens/profile_screen.dart';
 import 'package:flutter_application_1/src/screens/register_screen.dart';
+import 'package:flutter_application_1/src/screens/restaurant_detail_screen.dart';
 
 class AppRouter{
   static Route generateRoute(RouteSettings routeSettings){
@@ -40,6 +41,10 @@ class AppRouter{
       case RestMainRoute:
         return CupertinoPageRoute(
           builder: (context) => MainScreen(),
+        );
+      case RestaurantDetailRoute:
+        return CupertinoPageRoute(
+          builder: (context) => RestaurantDetailScreen(),
         );
       default:
         return CupertinoPageRoute(

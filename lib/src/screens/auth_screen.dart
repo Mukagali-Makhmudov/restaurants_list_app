@@ -53,10 +53,9 @@ class _AuthScreenState extends State<AuthScreen> {
             padding: AppPaddings.horizontal,
             child: CupertinoButton(
               padding: const EdgeInsets.symmetric(vertical: 20),
-              color: Color(0xFF4631D2),
+              color: AppColors.buttonColor,
               child: Text('Войти'), 
               onPressed: ()async {
-                print(emailController.text);
                 Dio dio = Dio();
                 Box tokensBox = Hive.box('tokens');
                 Box userBox = Hive.box('user');
@@ -106,7 +105,7 @@ class _AuthScreenState extends State<AuthScreen> {
             padding: AppPaddings.horizontal,
             child: CupertinoButton(
               padding: AppPaddings.vertical,
-              color: Color(0xFF4631D2),
+              color: AppColors.buttonColor,
               child: Text('Зарегистрироваться'), 
               onPressed: () {
                 Navigator.pushNamed(context, '/auth/register');

@@ -11,3 +11,4 @@ const String SearchRoute = '/restaurants/search';
 const String ProfileRoute = '/restaurants/profile';
 
 const String RestaurantDetailRoute = '/restaurants/detail';
+

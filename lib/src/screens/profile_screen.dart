@@ -22,7 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       backgroundColor: AppColors.scaffoldBackground,
       navigationBar: CupertinoNavigationBar(
         border: Border(),
-        backgroundColor: CupertinoColors.white,
+        backgroundColor: AppColors.white,
         middle: const Text('Профиль', ),
       ),
       child: Container(
@@ -31,11 +31,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Icon(CupertinoIcons.person_crop_circle, size: 100, color: CupertinoColors.black,),
+            Icon(CupertinoIcons.person_crop_circle, size: 100, color: AppColors.iconBlack,),
             Text(userBox.get('nickname'), textAlign: TextAlign.center, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),
             Text(userBox.get('email'), textAlign: TextAlign.center,),
             Container(
-              color: CupertinoColors.white,
+              color: AppColors.white,
               child: Expanded(
                 child: CupertinoButton(
                   alignment: Alignment.topLeft,
@@ -48,7 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   },
                   child: Text(
                     'Выйти',
-                    style: TextStyle(color: CupertinoColors.systemRed),
+                    style: TextStyle(color: AppColors.exitTextColor),
                     ),
                 ),
               ),
