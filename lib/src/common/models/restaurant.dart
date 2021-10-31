@@ -1,19 +1,19 @@
 class Restaurant{
   Restaurant({
-    required this.count,
+    //required this.count,
     required this.restaurantList,
   });
-  final int count;
+  //final int count;
   final List<RestaurantList> restaurantList;
 
   factory Restaurant.fromJson(Map<String, dynamic> data) {
-    final count = data['count'] as int;
+    //final count = data['count'] as int;
     final restaurantListData = data['restaurants'] as List<dynamic>?;
     final restaurantList = restaurantListData != null
       ? restaurantListData.map((restaurantListDataData) => RestaurantList.fromJson(restaurantListDataData)).toList()
       : <RestaurantList>[];
     return Restaurant(
-      count: count, 
+      //count: count, 
       restaurantList: restaurantList,);
   }
   // Map<String, dynamic> toJson(){
@@ -33,7 +33,7 @@ class RestaurantList{
     required this.schedule,
     required this.coords,
     required this.images,
-    required this.likes,
+    //required this.likes,
   });
 
   final int id;
@@ -43,7 +43,7 @@ class RestaurantList{
   final Schedule schedule;
   final Coord coords;
   final List<ImageClass> images;
-  final List<Like> likes;
+  //final List<Like> likes;
 
   factory RestaurantList.fromJson(Map<String, dynamic> data) {
     final id = data['id'] as int;
@@ -56,10 +56,10 @@ class RestaurantList{
     final images = imagesData != null
       ? imagesData.map((imagesDataData) => ImageClass.fromJson(imagesDataData)).toList()
       : <ImageClass>[];
-    final likesData = data['likes'] as List<dynamic>;
-    final likes = likesData != null
-      ? likesData.map((likesDatadata) => Like.fromJson(likesDatadata)).toList()
-      : <Like>[];
+    //final likesData = data['likes'] as List<dynamic>;
+    // final likes = likesData != null
+    //   ? likesData.map((likesDatadata) => Like.fromJson(likesDatadata)).toList()
+    //   : <Like>[];
     return RestaurantList(
       id: id,
       isFavourite: isFavourite, 
@@ -68,7 +68,7 @@ class RestaurantList{
       schedule: schedule,
       coords: coords,
       images: images,
-      likes: likes,
+      //likes: likes,
     );
   }
 
@@ -160,15 +160,15 @@ class ImageClass{
   // }
 }
 
-class Like {
-  Like({required this.restaurantId});
+// class Like {
+//   Like({required this.restaurantId});
 
-  final int restaurantId;
+//   final int restaurantId;
 
-  factory Like.fromJson(Map<String, dynamic> data){
-    final restaurantId = data['restaurant_id'] as int;
-    return Like(
-      restaurantId: restaurantId,
-    );
-  }
-}
+//   factory Like.fromJson(Map<String, dynamic> data){
+//     final restaurantId = data['restaurant_id'] as int;
+//     return Like(
+//       restaurantId: restaurantId,
+//     );
+//   }
+// }
