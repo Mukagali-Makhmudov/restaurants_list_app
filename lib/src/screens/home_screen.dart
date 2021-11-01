@@ -6,6 +6,7 @@ import 'package:flutter_application_1/src/common/models/restaurant.dart';
 import 'package:flutter_application_1/src/common/widgets/icon_button_func.dart';
 import 'package:flutter_application_1/src/screens/restaurant_detail_screen.dart';
 import 'package:flutter_application_1/src/service/service.dart';
+import 'package:hive/hive.dart';
 
 
 
@@ -45,8 +46,9 @@ class RestaurantsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Box tokensBox = Hive.box('tokens');
     return FutureBuilder<Restaurant>(
-        future: getData(),
+        future: getData(tokensBox.get('access')),
         builder: (BuildContext context, AsyncSnapshot<Restaurant> snapshot) {
           switch(snapshot.connectionState){
             case ConnectionState.waiting: return const Text('Loading...');
