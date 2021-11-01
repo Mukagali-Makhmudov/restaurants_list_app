@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_application_1/src/common/constants/color_constants.dart';
 import 'package:flutter_application_1/src/router/router.dart';
 import 'package:flutter_application_1/src/router/routing_const.dart';
+import 'package:flutter_application_1/src/service/service.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
